@@ -63,8 +63,8 @@ function theme_select_as_checkboxes($vars) {
 
   // Grab exposed filter description.  We'll put it under the label where it makes more sense.
   $description = '';
-  if (!empty($element['#description'])) {
-    $description = '<div class="description">'. $element['#description'] .'</div>';
+  if (!empty($element['#bef_description'])) {
+    $description = '<div class="description">'. $element['#bef_description'] .'</div>';
     unset($element['#description']);
   }
 
