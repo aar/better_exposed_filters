@@ -872,6 +872,12 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
               }
               $form[$field_id]['#bef_select_all_none'] = TRUE;
             }
+
+            // Add a description to the exposed filter
+            if (!empty($options['more_options']['bef_filter_description'])) {
+              $form[$field_id]['#bef_description'] = t($options['more_options']['bef_filter_description']);
+            }            
+            
           } // if (empty($form[$field_id]['#multiple'])) { ... } else {
           break; // case 'bef':
 
