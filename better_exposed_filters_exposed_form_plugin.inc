@@ -587,11 +587,13 @@ Title Desc|Z -> A</pre> Leave the replacement value blank to remove an option al
       if (!empty($options['more_options']['bef_filter_description'])) {
         // Collect replacement data
         $data = array();
-        $available = $options['more_options']['tokens']['available'];
-        if (in_array('vocabulary', $available)) {
-          $vocabs = taxonomy_get_vocabularies();
-          $data['vocabulary'] = $vocabs[$filters[$label]->options['vid']];
-        }
+        if (isset($options['more_options']['tokens'])) {
+          $available = $options['more_options']['tokens']['available'];
+          if (in_array('vocabulary', $available)) {
+            $vocabs = taxonomy_get_vocabularies();
+            $data['vocabulary'] = $vocabs[$filters[$label]->options['vid']];
+          }     
+        }  
         // Others?
 
         // Replace tokens
